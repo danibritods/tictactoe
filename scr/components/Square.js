@@ -8,10 +8,11 @@ export default props =>{
   const [squareState, setSquareState] = useState("") 
 
   function onPress(){
-    console.log(props.index,props.player)
     setSquareState(props.player)
-    props.setPlayer( ((props.player+1)%2) )
-    // props.setBoard(props.board[props.index] = props.player)
+    props.setPlayer( ((props.player%2)+1) )
+    props.board[props.index] = props.player
+    props.setBoard(props.board)
+    console.log(props.board)
 
     
   }
