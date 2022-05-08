@@ -5,8 +5,6 @@ import Board from "./components/Board"
 export default () => {
     return (
         <View>
-        <Text>TESTANDO</Text>
-        <Text>TESTETETE</Text>
         <Board/>
         </View>
     )

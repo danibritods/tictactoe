@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Text, View } from "react-native"
-import { Button } from "react-native"
+import { Button, StyleSheet } from "react-native"
 
 
 
@@ -40,20 +40,12 @@ export default props => {
   }
 
   return(   
-    // <View style={
-    //   {
-    //     height:40,
-    //     width:40,
-    //     backgroundColor: props.color || '#000'
-    //   }}>
-    <View>
-            <Button
-              onPress={onPress}
-              title={squareState}
-              key={props.key}
-              />
-          </View>
+      <Button
+        onPress={onPress}
+        title={squareState}
+        index={props.index}
+        style={props.squareStyle}
+        />
+
   ) 
   }
-        
- 
