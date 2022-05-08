@@ -12,9 +12,7 @@ export default props => {
     
     return(
         <View>
-            <Square index={0} board={board} setBoard={setBoard} player={player} setPlayer={setPlayer}/>
-            <Square index={1} board={board} setBoard={setBoard} player={player} setPlayer={setPlayer}/>
-            <Square index={2} board={board} setBoard={setBoard} player={player} setPlayer={setPlayer}/>
+            {board.map((i,_) => <Square key={i} board={board} setBoard={setBoard} player={player} setPlayer={setPlayer}/>)}
         </View>
     )
 }
