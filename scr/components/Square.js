@@ -4,12 +4,18 @@ import { Button } from "react-native"
 
 
 
-export default props =>{
+export default props => {
   const [squareState, setSquareState] = useState("") 
 
+  function checkWinner(){
+    let b = props.board 
+    (b[0] + b[1] + b[2])
+
+  }
+
   function onPress(){
-    setSquareState(props.player)
-    props.setPlayer( ((props.player%2)+1) )
+    setSquareState(props.player) //TODO map 0,1 to X and O in the button title
+    props.setPlayer( ((props.player+1)%2) )
     props.board[props.index] = props.player
     props.setBoard(props.board)
     console.log(props.board)
