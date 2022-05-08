@@ -8,8 +8,24 @@ export default props => {
   const [squareState, setSquareState] = useState("") 
 
   function checkWinner(){
-    let b = props.board 
-    (b[0] + b[1] + b[2])
+    let b = props.board
+
+    if(
+    (b[0] + b[1] + b[2])%3 || 
+    (b[3] + b[4] + b[5])%3 || 
+    (b[6] + b[7] + b[8])%3 || 
+    
+    (b[0] + b[3] + b[6])%3 || 
+    (b[1] + b[4] + b[7])%3 || 
+    (b[2] + b[5] + b[8])%3 || 
+
+    (b[1] + b[4] + b[8])%3 || 
+    (b[6] + b[4] + b[2])%3
+    ){
+      console.warn("Winner!")
+      return(-1) //TODO 1. stablish a logic to return the winner 2. break the logic into smaller steps
+    }
+    return(0)
 
   }
 
@@ -19,7 +35,7 @@ export default props => {
     props.board[props.index] = props.player
     props.setBoard(props.board)
     console.log(props.board)
-
+    checkWinner()
     
   }
 
