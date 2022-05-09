@@ -11,16 +11,16 @@ export default props => {
     let b = props.board
 
     if(
-    (b[0] + b[1] + b[2])%3 || 
-    (b[3] + b[4] + b[5])%3 || 
-    (b[6] + b[7] + b[8])%3 || 
+    (b[0] + b[1] + b[2])%3=== 0 || 
+    (b[3] + b[4] + b[5])%3=== 0 || 
+    (b[6] + b[7] + b[8])%3=== 0 || 
     
-    (b[0] + b[3] + b[6])%3 || 
-    (b[1] + b[4] + b[7])%3 || 
-    (b[2] + b[5] + b[8])%3 || 
+    (b[0] + b[3] + b[6])%3=== 0 || 
+    (b[1] + b[4] + b[7])%3=== 0 || 
+    (b[2] + b[5] + b[8])%3=== 0 || 
 
-    (b[1] + b[4] + b[8])%3 || 
-    (b[6] + b[4] + b[2])%3
+    (b[1] + b[4] + b[8])%3=== 0 || 
+    (b[6] + b[4] + b[2])%3=== 0
     ){
       console.warn("Winner!")
       return(-1) //TODO 1. stablish a logic to return the winner 2. break the logic into smaller steps
@@ -30,8 +30,7 @@ export default props => {
   }
 
   function symbol(x){
-    if (x === null){return "_"
-    }
+    if (isNaN(x)){return "_"}
     return (x == 1? "X" : "O")
   }
 
@@ -76,7 +75,7 @@ export default props => {
     fontSize: 20,
     lineHeight: 21,
     fontWeight: 'bold',
-    letterSpacing: 0.25,
+    letterSpacing: 0.01,
     color: 'white',
   },
 

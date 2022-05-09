@@ -4,14 +4,14 @@ import Square from "./Square"
 
 
 export default props => {
-    const [board,setBoard] = useState([null,null,null,
-                                    null,null,null,
-                                    null,null,null])
+    const [board,setBoard] = useState([NaN,NaN,NaN,
+                                    NaN,NaN,NaN,
+                                    NaN,NaN,NaN])
     const [player, setPlayer] = useState(1)
     function reset(){
-        setBoard([null,null,null,
-                null,null,null,
-                null,null,null])
+        setBoard([NaN,NaN,NaN,
+                NaN,NaN,NaN,
+                NaN,NaN,NaN])
     }
     
     return(
