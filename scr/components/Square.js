@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { Text, View } from "react-native"
-import { Button, StyleSheet } from "react-native"
+import { Pressable, Text, View } from "react-native"
+import { Button, StyleSheet, TouchableOpacity } from "react-native"
 
 
 
 export default props => {
-  const [squareState, setSquareState] = useState("") 
+  const [squareState, setSquareState] = useState("-") 
 
   function checkWinner(){
     let b = props.board
@@ -40,12 +40,40 @@ export default props => {
   }
 
   return(   
-      <Button
+      <TouchableOpacity
+        style={style.button}
         onPress={onPress}
-        title={squareState}
-        index={props.index}
-        style={props.squareStyle}
-        />
+        //title={squareState}
+        index={props.index}>
+          <Text style={style.text}>
+          {squareState}
+          </Text>
+        </TouchableOpacity>
+
 
   ) 
   }
+
+  const style=StyleSheet.create({
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 20,
+    paddingHorizontal: 60,
+    borderRadius: 19,
+    elevation: 0,
+    backgroundColor: 'grey',
+    height: 30,
+    height: 30,
+  
+    
+  },
+  text: {
+    fontSize: 20,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
+  },
+
+  })

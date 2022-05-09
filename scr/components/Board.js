@@ -12,19 +12,17 @@ export default props => {
     
     return(
         <View style={style.Flex}>
-            {board.map((_,i) => <Square index={i} key={i} board={board} setBoard={setBoard} player={player} setPlayer={setPlayer} squareStyle={style.Square}/>)}
+            {board.map((_,i) => <Square index={i} key={i} board={board} 
+            setBoard={setBoard} player={player} setPlayer={setPlayer} squareStyle={style.Square}/>)}
         </View>
     )
 }
 const style=StyleSheet.create({
     Flex: {
         flexDirection: 'row',
-        with: '10',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    Square: {
-        height: 40,
-        width: 40
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        flexWrap: 'wrap',
+        width: '34%',
     }
 })
