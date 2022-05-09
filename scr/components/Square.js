@@ -19,7 +19,7 @@ export default (props) => {
       (b[6] + b[4] + b[2]) % 3 === 0
     ) {
       console.warn("Winner!");
-      return -1; //TODO 1. stablish a logic to return the winner 2. break the logic into smaller steps
+      return -1; //TODO 1. stablish a logic to return the winner 2. break the logic into smaller steps 3. Maybe something using reduce
     }
     return 0;
   }
@@ -60,6 +60,10 @@ const style = StyleSheet.create({
     backgroundColor: "grey",
     height: 30,
     height: 30,
+    overflow: 'hidden',
+    maxHeight:30,
+    maxWidth: 30,
+    
   },
   text: {
     fontSize: 20,
