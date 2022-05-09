@@ -5,7 +5,7 @@ import { Button, StyleSheet, TouchableOpacity } from "react-native"
 
 
 export default props => {
-  const [squareState, setSquareState] = useState("-") 
+  const [squareState, setSquareState] = useState("_") 
 
   function checkWinner(){
     let b = props.board
@@ -29,11 +29,16 @@ export default props => {
 
   }
 
+  function symbol(x){
+    if (x === null){return "_"
+    }
+    return (x == 1? "X" : "O")
+  }
+
   function onPress(){
-    setSquareState(props.player) //TODO map 0,1 to X and O in the button title
-    props.setPlayer( ((props.player+1)%2) )
     props.board[props.index] = props.player
     props.setBoard(props.board)
+    props.setPlayer( ((props.player+1)%2) )
     console.log(props.board)
     checkWinner()
     
@@ -43,10 +48,9 @@ export default props => {
       <TouchableOpacity
         style={style.button}
         onPress={onPress}
-        //title={squareState}
         index={props.index}>
           <Text style={style.text}>
-          {squareState}
+            {symbol(props.board[props.index])}
           </Text>
         </TouchableOpacity>
 
