@@ -2,6 +2,8 @@ import { useState } from "react";
 import { View, StyleSheet, Button } from "react-native";
 import Square from "./Square";
 
+const l = 50;
+
 export default (props) => {
   const [board, setBoard] = useState([
     NaN,
@@ -20,7 +22,7 @@ export default (props) => {
   }
 
   return (
-    <View style={style.Flex}>
+    <View style={style.flex}>
       {board.map((_, i) => (
         <Square
           index={i}
@@ -29,7 +31,7 @@ export default (props) => {
           setBoard={setBoard}
           player={player}
           setPlayer={setPlayer}
-          squareStyle={style.Square}
+          style={style.buttonSize}
         />
       ))}
       <Button title="Reset" onPress={reset} />
@@ -37,11 +39,19 @@ export default (props) => {
   );
 };
 const style = StyleSheet.create({
-  Flex: {
+  flex: {
+    //maxHeight: 10,
     flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
+    //justifyContent: "space-between",
+    //alignItems: "flex-start",
     flexWrap: "wrap",
-    width: "34%",
+    minWidth: (l + 30 + 2) * 3,
+    maxWidth: (l + 30 + 2) * 3,
+  },
+  buttonSize: {
+    minHeight: l,
+    minWidth: l,
+    maxHeight: l,
+    maxWidth: l,
   },
 });

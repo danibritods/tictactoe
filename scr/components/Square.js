@@ -41,7 +41,7 @@ export default (props) => {
 
   return (
     <TouchableOpacity
-      style={style.button}
+      style={[style.button, props.style]}
       onPress={onPress}
       index={props.index}
     >
@@ -49,21 +49,16 @@ export default (props) => {
     </TouchableOpacity>
   );
 };
-
 const style = StyleSheet.create({
   button: {
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 20,
-    paddingHorizontal: 60,
-    borderRadius: 19,
+    paddingVertical: 30,
+    paddingHorizontal: 30,
+    borderRadius: 4,
     backgroundColor: "grey",
-    height: 30,
-    height: 30,
-    overflow: 'hidden',
-    maxHeight:30,
-    maxWidth: 30,
-    
+    overflow: "hidden",
+    margin: 2,
   },
   text: {
     fontSize: 20,
