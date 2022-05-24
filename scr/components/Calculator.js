@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { View, StyleSheet, Button, Text } from "react-native";
-import Square from "./Square";
+import Square from "./Button";
 
 const l = 50;
 
@@ -22,6 +22,10 @@ export default (props) => {
   function reset() {
     setBoard([NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN]);
   }
+
+  function checkWiner(board,move) {
+    return checkTriplets(generateTriplets(board,move))
+  }//TODO create a winner hook, implement checkwiner 
   
   return (
     <>
@@ -34,6 +38,7 @@ export default (props) => {
         board={board}
         setBoard={setBoard}
         player={player}
+        players={players}
         setPlayer={setPlayer}
         style={style.buttonSize}
         />
