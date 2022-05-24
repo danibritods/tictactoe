@@ -25,15 +25,15 @@ export default (props) => {
     <View style={style.flex}>
       {board.map((_, i) => (
         <Square
-          index={i}
-          key={i}
-          board={board}
-          setBoard={setBoard}
-          player={player}
-          setPlayer={setPlayer}
-          style={style.buttonSize}
+        index={i}
+        key={i}
+        board={board}
+        setBoard={setBoard}
+        player={player}
+        setPlayer={setPlayer}
+        style={style.buttonSize}
         />
-      ))}
+        ))}
       <Button title="Reset" onPress={reset} />
     </View>
   );

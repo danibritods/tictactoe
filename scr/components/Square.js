@@ -21,6 +21,7 @@ export default (props) => {
       console.warn("Winner!");
       return -1; //TODO 1. stablish a logic to return the winner 2. break the logic into smaller steps 3. Maybe something using reduce
     }
+
     return 0;
   }
 
@@ -31,12 +32,14 @@ export default (props) => {
     return x == 1 ? "X" : "O";
   }
 
-  function onPress() {
-    props.board[props.index] = props.player;
-    props.setBoard(props.board);
-    props.setPlayer((props.player + 1) % 2);
-    console.log(props.board);
-    checkWinner();
+  function onPress(){
+    if(isNaN(props.board[props.index])){
+      props.board[props.index] = props.player;
+      props.setBoard(props.board);
+      props.setPlayer((props.player + 1) % 2);
+      console.log(props.board);
+      checkWinner();
+    }
   }
 
   return (
@@ -61,7 +64,7 @@ const style = StyleSheet.create({
     margin: 2,
   },
   text: {
-    fontSize: 20,
+    fontSize: 30,
     lineHeight: 21,
     fontWeight: "bold",
     letterSpacing: 0.01,
