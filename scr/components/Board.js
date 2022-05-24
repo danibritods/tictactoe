@@ -61,9 +61,9 @@ const style = StyleSheet.create({
   },
     title: {
     fontSize: 25,
-    lineHeight: 21,
+    // lineHeight: 21,
     fontWeight: "bold",
-    letterSpacing: 0.01,
+    // letterSpacing: 0.01,
     color: "Grey",
     alignContent: "center"
   },
