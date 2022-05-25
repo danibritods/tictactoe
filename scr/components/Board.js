@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { View, StyleSheet, Button, Text } from "react-native";
-import Square from "./Button";
+import Square from "./Square";
 
 const l = 50;
 
@@ -17,7 +17,7 @@ export default (props) => {
     NaN,
   ]);
   const [player, setPlayer] = useState(1);
-  const players = ["X","O"]
+  const players = ["O","X"]
 
   function reset() {
     setBoard([NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN]);
