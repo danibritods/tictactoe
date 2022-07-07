@@ -12,9 +12,11 @@ export default (props) => {
       (b[0] + b[1] + b[2]) % 3 === 0 ||
       (b[3] + b[4] + b[5]) % 3 === 0 ||
       (b[6] + b[7] + b[8]) % 3 === 0 ||
+
       (b[0] + b[3] + b[6]) % 3 === 0 ||
       (b[1] + b[4] + b[7]) % 3 === 0 ||
       (b[2] + b[5] + b[8]) % 3 === 0 ||
+      
       (b[1] + b[4] + b[8]) % 3 === 0 ||
       (b[6] + b[4] + b[2]) % 3 === 0
     ) {
@@ -67,20 +69,24 @@ export default (props) => {
 const style = StyleSheet.create({
   button: {
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-end",
     paddingVertical: 30,
     paddingHorizontal: 30,
     borderRadius: 4,
     backgroundColor: "grey",
     overflow: "hidden",
     margin: 1,
+    textAlignVertical: "bottom",
+
+    
   },
   text: {
-    fontSize: 50,
+    fontSize: 80,
     // fontFamily: "serif",
     lineHeight: 21,
     fontWeight: "light",
     letterSpacing: 0.01,
     color: "white",
+    textAlignVertical: "bottom"
   },
 });

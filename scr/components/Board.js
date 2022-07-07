@@ -69,14 +69,16 @@ const style = StyleSheet.create({
     maxWidth: l,
   },
     title: {
-    fontSize: 50,
+    fontSize: 45 ,
     // lineHeight: 21,
     fontWeight: "bold",
     // letterSpacing: 0.01,
     color: "Grey",
-    // alignContent: "center"
+    alignContent: "center"
   },
   screen: {
-    alignItems: "stretch"
+    alignItems: "stretch",
+    justifyContent: "flex-start"
+    
   }
 });
