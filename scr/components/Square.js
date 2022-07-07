@@ -19,10 +19,10 @@ export default (props) => {
       (b[6] + b[4] + b[2]) % 3 === 0
     ) {
       console.warn("Winner!");
-      return -1; //TODO 1. stablish a logic to return the winner 2. break the logic into smaller steps 3. Maybe something using reduce
+      return true; //TODO 2. break the logic into smaller steps 3. Maybe something using reduce
     }
 
-    return 0;
+    return false;
   }
 
   function symbol(x) {
@@ -33,14 +33,26 @@ export default (props) => {
   }
 
   function onPress(){
-    if(isNaN(props.board[props.index])){
+    if(isNaN(props.board[props.index]) && props.player > -1){
       props.board[props.index] = props.player;
       props.setBoard(props.board);
-      props.setPlayer((props.player + 1) % 2);
       console.log(props.board);
-      checkWinner();
+      if(checkWinner()){
+        console.warn(props.player + " wins!!");
+        props.setGameText(props.player + " wins!!");
+        props.setPlayer(-1);
+      }
+      else{
+        props.setPlayer((props.player + 1) % 2);
+        props.setGameText(symbol(props.player+1) + " plays:");
+      }
     }
+    if(props.board.filter(x=>isNaN(x)).length === 0){
+      console.warn("Deu velha!!");
+      props.setGameText("GAME OVER!");
+    }      
   }
+
 
   return (
     <TouchableOpacity

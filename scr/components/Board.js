@@ -17,10 +17,13 @@ export default (props) => {
     NaN,
   ]);
   const [player, setPlayer] = useState(1);
-  const players = ["O","X"]
+  const players = ["O","X"];
+  const [gameText, setGameText] = useState("X plays:");
 
   function reset() {
     setBoard([NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN]);
+    setPlayer(1);
+    setGameText("X plays:")
   }
 
   function checkWiner(board,move) {
@@ -29,7 +32,7 @@ export default (props) => {
   
   return (
     <>
-    <Text style={style.title}>{players[player]} plays: </Text>
+    <Text style={style.title}> {gameText} </Text>
     <View style={style.flex}>
       {board.map((_, i) => (
         <Square
@@ -41,6 +44,7 @@ export default (props) => {
         players={players}
         setPlayer={setPlayer}
         style={style.buttonSize}
+        setGameText={setGameText}
         />
         ))}
       <Button title="Reset" onPress={reset} />
