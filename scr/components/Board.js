@@ -2,7 +2,7 @@ import { useState } from "react";
 import { View, StyleSheet, Button, Text } from "react-native";
 import Square from "./Square";
 
-const l = 50;
+const l = 100;
 
 export default (props) => {
   const [board, setBoard] = useState([
@@ -31,7 +31,7 @@ export default (props) => {
   }//TODO create a winner hook, implement checkwiner 
   
   return (
-    <>
+    <View style={style.screen}>
     <Text style={style.title}> {gameText} </Text>
     <View style={style.flex}>
       {board.map((_, i) => (
@@ -47,9 +47,9 @@ export default (props) => {
         setGameText={setGameText}
         />
         ))}
-      <Button title="Reset" onPress={reset} />
     </View>
-    </>
+    <Button title="Reset" onPress={reset} />
+    </View>
   );
 };
 const style = StyleSheet.create({
@@ -59,8 +59,8 @@ const style = StyleSheet.create({
     //justifyContent: "space-between",
     //alignItems: "flex-start",
     flexWrap: "wrap",
-    minWidth: (l + 30 + 2) * 3,
-    maxWidth: (l + 30 + 2) * 3,
+    // minWidth: (l + 20 + 2) * 3,
+    maxWidth: (l + 0 + 2) * 3,
   },
   buttonSize: {
     minHeight: l,
@@ -69,11 +69,14 @@ const style = StyleSheet.create({
     maxWidth: l,
   },
     title: {
-    fontSize: 25,
+    fontSize: 50,
     // lineHeight: 21,
     fontWeight: "bold",
     // letterSpacing: 0.01,
     color: "Grey",
-    alignContent: "center"
+    // alignContent: "center"
   },
+  screen: {
+    alignItems: "stretch"
+  }
 });

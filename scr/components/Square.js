@@ -38,8 +38,8 @@ export default (props) => {
       props.setBoard(props.board);
       console.log(props.board);
       if(checkWinner()){
-        console.warn(props.player + " wins!!");
-        props.setGameText(props.player + " wins!!");
+        console.warn(symbol(props.player) + " wins!!");
+        props.setGameText(symbol(props.player) + " wins!!");
         props.setPlayer(-1);
       }
       else{
@@ -73,12 +73,13 @@ const style = StyleSheet.create({
     borderRadius: 4,
     backgroundColor: "grey",
     overflow: "hidden",
-    margin: 2,
+    margin: 1,
   },
   text: {
-    fontSize: 30,
+    fontSize: 50,
+    // fontFamily: "serif",
     lineHeight: 21,
-    fontWeight: "bold",
+    fontWeight: "light",
     letterSpacing: 0.01,
     color: "white",
   },
