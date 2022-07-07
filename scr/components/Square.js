@@ -7,7 +7,6 @@ export default (props) => {
 
   function checkWinner() {
     let b = props.board;
-
     if (
       (b[0] + b[1] + b[2]) % 3 === 0 ||
       (b[3] + b[4] + b[5]) % 3 === 0 ||
@@ -17,7 +16,7 @@ export default (props) => {
       (b[1] + b[4] + b[7]) % 3 === 0 ||
       (b[2] + b[5] + b[8]) % 3 === 0 ||
       
-      (b[1] + b[4] + b[8]) % 3 === 0 ||
+      (b[0] + b[4] + b[8]) % 3 === 0 ||
       (b[6] + b[4] + b[2]) % 3 === 0
     ) {
       console.warn("Winner!");
