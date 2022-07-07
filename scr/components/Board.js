@@ -18,12 +18,12 @@ export default (props) => {
   ]);
   const [player, setPlayer] = useState(1);
   const players = ["O","X"];
-  const [gameText, setGameText] = useState("X plays:");
+  const [gameText, setGameText] = useState("Player: X");
 
   function reset() {
     setBoard([NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN, NaN]);
     setPlayer(1);
-    setGameText("X plays:")
+    setGameText("Player: X")
   }
 
   function checkWiner(board,move) {
@@ -69,7 +69,7 @@ const style = StyleSheet.create({
     maxWidth: l,
   },
     title: {
-    fontSize: 45 ,
+    fontSize: 41 ,
     // lineHeight: 21,
     fontWeight: "bold",
     // letterSpacing: 0.01,

@@ -40,13 +40,13 @@ export default (props) => {
       props.setBoard(props.board);
       console.log(props.board);
       if(checkWinner()){
-        console.warn(symbol(props.player) + " wins!!");
-        props.setGameText(symbol(props.player) + " wins!!");
+        console.warn(symbol(props.player) + " WINS!!");
+        props.setGameText(symbol(props.player) + " WINS!!");
         props.setPlayer(-1);
       }
       else{
         props.setPlayer((props.player + 1) % 2);
-        props.setGameText(symbol(props.player+1) + " plays:");
+        props.setGameText("Player: "+symbol(props.player+1));
       }
     }
     if(props.board.filter(x=>isNaN(x)).length === 0){
